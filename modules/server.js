@@ -23,7 +23,7 @@ function start() {
         form.on(`fileBegin`, function(name, file) {
             file.path = __dirname + `/../public/uploads/` + file.name;
             console.log(file.path);
-            var file_name = file.name;
+            const file_name = file.name;
             res.render(__dirname + `/../templates/upload`, {
                 file_name: file_name,
             });
