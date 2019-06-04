@@ -1,37 +1,3 @@
-/*const http = require(`http`);
-const colors = require(`colors`);
-const handlers = require(`./handlers`)
-
-function start() {
-    function onRequest(request, response) {
-        console.log(`Odebrano zapytanie`);
-        response.writeHead(200, { "Content-Type": "text/plain; charset=utf-8" });
-        console.log("Zapytanie " + request.url + " odebrane.");
-
-        switch (request.url) {
-
-            case `/`:
-            case `/start`:
-                handlers.welcome(request, response);
-                console.log(request.url);
-                break;
-            case `/upload`:
-                handlers.upload(request, response);
-                break;
-            case `/show`:
-                handlers.show(request, response);
-                break;
-            default:
-                handlers.error(request, response);
-        }
-
-    }
-    http.createServer(onRequest).listen(30001);
-    console.log(`Uruchomiono serwer`.green);
-}
-*/
-
-
 const express = require(`express`);
 const path = require(`path`);
 const colors = require(`colors`)
@@ -78,12 +44,3 @@ function start() {
     })
 }
 exports.start = start;
-/*
-exports.show = function(request, response) {
-    fs.readFile(img_name, "binary", function(error, file) {
-        response.writeHead(200, { "Content-Type": "image/png" });
-        response.write(file, "binary");
-        response.end();
-    });
-}
-*/
