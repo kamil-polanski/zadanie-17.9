@@ -5,8 +5,8 @@ const app = express();
 const formidable = require(`formidable`);
 
 
-app.set('view engine', 'ejs');
-app.use(express.static('public'));
+app.set(`view engine`, `ejs`);
+app.use(express.static(`public`));
 
 const welcome = [`/`, `/start`, ]
 
@@ -23,10 +23,9 @@ function start() {
         form.on(`fileBegin`, function(name, file) {
             file.path = __dirname + `/../public/uploads/` + file.name;
             console.log(file.path);
-            var tag = file.name;
-            console.log(file.name);
-            res.render(__dirname + '/../templates/upload', {
-                tagline: tag
+            var file_name = file.name;
+            res.render(__dirname + `/../templates/upload`, {
+                file_name: file_name,
             });
         });
         form.on(`file`, function(name, file) {
